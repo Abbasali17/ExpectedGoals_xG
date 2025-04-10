@@ -64,7 +64,7 @@ The model achieves reasonable performance in distinguishing goals from non-goals
 *(Caption: Test set evaluation showing ROC, Precision-Recall, Calibration, and Predicted xG Distribution. AUC ~0.71, PR AUC ~0.35. Calibration shows some overconfidence at higher probabilities.)*
 
 **Example: Qualitative Shot Analysis**
-![Example Low xG Goal](7_example_shot_GOAL_xg0.013_match3813295_event_b4a0b52e_f8a0_4641_b9a8_39897e5f2171.png)
+![Example](7_example_shot_GOAL_xg0.013_match3813295_event_b4a0b52e_f8a0_4641_b9a8_39897e5f2171.png)
 *(Caption: Example of a goal scored despite a very low predicted xG (0.013), highlighting the difficult nature of the finish likely due to defensive pressure/positioning captured by the tracking data.)*
 
 **Example: Feature Correlation**
