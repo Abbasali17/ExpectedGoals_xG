@@ -58,25 +58,24 @@ The core steps undertaken in the Jupyter Notebook (`Enhanced_xG_Tracking_ISL.ipy
 
 The model achieves reasonable performance in distinguishing goals from non-goals, significantly outperforming random chance. Tracking-based features provide additional context beyond simple shot location.
 
-*(Note: You can embed key result images here using Markdown. Upload the images to your repository, ideally within the `xg_model_plots_isl` folder, and link them)*
 
 **Example: Evaluation Metrics Plot**
-![Model Evaluation Plots](./xg_model_plots_isl/6_model_evaluation_plots.png)
+![Model Evaluation Plots](6_model_evaluation_plots.png)
 *(Caption: Test set evaluation showing ROC, Precision-Recall, Calibration, and Predicted xG Distribution. AUC ~0.71, PR AUC ~0.35. Calibration shows some overconfidence at higher probabilities.)*
 
 **Example: Qualitative Shot Analysis**
-![Example Low xG Goal](./xg_model_plots_isl/7_example_shot_GOAL_xg0.013_match3813295_event_b4a0b52e_f8a0_4641_b9a8_39897e5f2171.png)
+![Example Low xG Goal](7_example_shot_GOAL_xg0.013_match3813295_event_b4a0b52e_f8a0_4641_b9a8_39897e5f2171.png)
 *(Caption: Example of a goal scored despite a very low predicted xG (0.013), highlighting the difficult nature of the finish likely due to defensive pressure/positioning captured by the tracking data.)*
 
 **Example: Feature Correlation**
-![Feature Correlation Heatmap](./xg_model_plots_isl/3c_eda_feature_correlation_heatmap.png)
+![Feature Correlation Heatmap](3c_eda_feature_correlation_heatmap.png)
 *(Caption: Correlation matrix showing relationships between engineered features and the goal outcome.)*
 
 ## Installation
 
 1.  Clone this repository:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Abbasali17/ExpectedGoals_xG.git
     cd your-repo-name
     ```
 2.  Install the required Python libraries. It's recommended to use a virtual environment.
@@ -89,22 +88,25 @@ The model achieves reasonable performance in distinguishing goals from non-goals
 
 1.  Ensure all dependencies listed above are installed.
 2.  Run the Jupyter Notebook:
-    *   `Enhanced_xG_Tracking_ISL.ipynb` (or your specific notebook name)
+    *   `xG_code.ipynb`
 3.  The notebook will execute all steps, including data loading, processing, training, evaluation, and visualization.
 4.  Generated plots will be saved automatically to the `xg_model_plots_isl/` directory within the repository folder.
 
-## File Structure
-├── Enhanced_xG_Tracking_ISL.ipynb # Main Jupyter Notebook implementing the model
-├── xg_model_plots_isl/ # Directory where generated plots are saved
-│ ├── 1a_eda_shot_subtype_distribution.png
-│ ├── 1b_eda_open_play_shot_locations.png
-│ ├── 2_eda_gk_filter_comparison.png
-│ ├── 3a_eda_feature_distributions.png
-│ ├── 3b_eda_binary_feature_counts.png
-│ ├── 3c_eda_feature_correlation_heatmap.png
-│ ├── 3d_eda_shot_map_opp_triangle.png
-│ ├── 5_model_training_history.png
-│ ├── 6_model_evaluation_plots.png
-│ ├── 7_example_shot_*.png # Example qualitative shot plots
-│ └── ...
-└── README.md # This file
+
+## Future Work & Potential Improvements
+
+*   **Model Calibration:** Apply calibration techniques (e.g., Isotonic Regression) to improve the reliability of predicted probabilities.
+*   **Alternative Models:** Experiment with Gradient Boosting models (XGBoost, LightGBM) or more complex Neural Network architectures.
+*   **Hyperparameter Tuning:** Optimize hyperparameters for the chosen model using techniques like Grid Search or Randomized Search.
+*   **Advanced Features:** Incorporate player velocities, distance/angle to *nearest* defenders, pressure metrics, or information about the pass leading to the shot.
+*   **Error Analysis:** Deep dive into instances where the model prediction significantly differs from the actual outcome.
+*   **Cross-Competition Validation:** Carefully adapt feature engineering to apply the modeling approach to other datasets (like Euro 2020 freeze frames), potentially requiring different feature sets or models.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+*   **StatsBomb:** For providing the invaluable Open Data used in this project.
+*   **MplSoccer:** For the excellent library facilitating football data parsing and visualization.
