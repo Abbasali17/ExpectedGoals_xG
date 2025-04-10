@@ -39,7 +39,7 @@ You can find more information about StatsBomb Open Data [here](https://statsbomb
 
 ## Methodology
 
-The core steps undertaken in the Jupyter Notebook (`Enhanced_xG_Tracking_ISL.ipynb`) are:
+The core steps undertaken in the Jupyter Notebook (`xG_code.py`) are:
 
 1.  **Data Loading:** Load match data, event data, and tracking data for the specified ISL season using `mplsoccer.Sbopen`.
 2.  **Filtering:**
